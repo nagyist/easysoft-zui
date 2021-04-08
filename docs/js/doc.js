@@ -1,8 +1,8 @@
 /*!
- * ZUI: Document - v1.9.2 - 2020-07-09
+ * ZUI: Document - v1.9.2 - 2021-04-08
  * http://openzui.com
  * GitHub: https://github.com/easysoft/zui.git 
- * Copyright (c) 2020 cnezsoft.com; Licensed MIT
+ * Copyright (c) 2021 cnezsoft.com; Licensed MIT
  */
 
 /* ========================================================================
@@ -14003,7 +14003,7 @@ require('./polyfill-done.js');
         var lastShowDataCall;
 
         loadData(section.url, function(data, dataType) {
-            if(zuiPkg) data = data.format(zuiPkg, '{\\$0}');
+            if(zuiPkg) data = $.zui.formatString(data, zuiPkg);
             var showData = function() {
                 if(data && window.marked && section.targetType === 'markdown') {
                     var $article = $();
@@ -14473,19 +14473,19 @@ require('./polyfill-done.js');
                 var $e = $(this);
                 var eData = $e.data();
                 if(eData.fmtHref) {
-                    $e.attr('href', eData.fmtHref.format(pkg));
+                    $e.attr('href', $.zui.formatString(eData.fmtHref, pkg));
                 }
                 if(eData.fmtText) {
-                    $e.text(eData.fmtText.format(pkg));
+                    $e.text($.zui.formatString(eData.fmtText, pkg));
                 }
                 if(eData.fmtHtml) {
-                    $e.html(eData.fmtHtml.format(pkg));
+                    $e.html($.zui.formatString(eData.fmtHtml, pkg));
                 }
                 if(eData.fmt) {
                     $.each(eData.fmt.split('|'), function(idx, fmt) {
                         var fmtAttr = fmt.substr(0, fmt.indexOf(':'));
                         var fmtValue = fmt.substr(fmtAttr.length + 1);
-                        $e.attr(fmtAttr, fmtValue.format(pkg));
+                        $e.attr(fmtAttr, $.zui.formatString(fmtValue, pkg));
                     });
                 }
             });
