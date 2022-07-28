@@ -19,6 +19,8 @@
 
 使用组件类`.form-horizontal`来获得label和input同行表单外观
 
+## form-horizontal
+
  ```html:example: flex gap-3
  <form class="form-horizontal">
       <div class="form-group">

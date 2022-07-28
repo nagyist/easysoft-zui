@@ -1,20 +1,14 @@
 .form-group {
     margin-bottom: var(--margin-bottom-group);
+    @apply mb-3;
 }
 
 .form-group label {
-    @apply inline-block font-bold;
-    min-width: 3rem;
-    width: var(--label-width);
+    @apply inline-block font-bold w-12;
 }
 
 .form-horizontal .form-group {
-    @apply flex flex-row
-}
-
-
-.form-horizontal .form-group {
-    @apply -mx-3
+    @apply flex flex-row mx-3
 }
 
 .form-control {
