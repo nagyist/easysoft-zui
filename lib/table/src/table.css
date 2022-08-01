@@ -1,11 +1,10 @@
 .table {
     @apply w-full;
     @apply border-2;
-    border-radius: var(--table-radius);
 }
 
-.table th,
-.table td {
+.table>th,
+.table>td {
     @apply px-4 py-2 ;
 }
 
@@ -13,13 +12,11 @@
     background: var(--table-striped-color);
 }
 
-.-hover  tbody  tr:hover  td,
-.-hover  tbody  tr:hover  th {
-    background: var(--table-hover-color);
+.-hover tbody tr:hover td,
+.-hover tbody tr:hover th {
+  background: var(--table-hover-color);
 }
 
-.-bordered {
-}
 .-bordered th,
 .-bordered td {
     @apply border-2;
@@ -28,7 +25,7 @@
 .-borderless {
     @apply border-0;
 }
-.-borderless thead  tr  th,
+.-borderless thead tr th,
 .-borderless th,
 .-borderless td {
     @apply border-0;
@@ -40,20 +37,12 @@
 }
 
 .-fixed {
-    table-layout: fixed;
-    /* table-fixed */
+  table-layout: fixed;
 }
 
 .-fixed th,
 .-fixed td {
     @apply overflow-hidden;
     white-space: nowrap;
-}
-
-.-fixed tfoot  tr  th,
-.-fixed tfoot  tr  td,
-.-fixed .nofixed,
-.-fixed .nofixed {
-    @apply overflow-visible;
 }
 
