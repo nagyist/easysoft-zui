@@ -33,7 +33,7 @@
   top: 100%;
   left: 0;
   z-index: @zindex-dropdown;
-  display: none; // none by default, but block on "open" of the menu
+//   display: none; // none by default, but block on "open" of the menu
   float: left;
   min-width: @dropdown-min-width;
   padding: 5px 0;
@@ -46,6 +46,9 @@
   border-radius: @border-radius-base;
   box-shadow: 0 6px 12px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.1);
   background-clip: padding-box;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .9s;
 
   // Aligns the dropdown menu to right
   &.pull-right {
@@ -129,7 +132,7 @@
 .dropdown-hover:hover,
 .open {
   // Show the menu
-  > .dropdown-menu { display: block; opacity: 1;}
+  > .dropdown-menu { visibility: visible; transition: opacity .9s; opacity: 1;}
 
   // Remove the outline when :focus is triggered
   > a { outline: 0; }
@@ -212,7 +215,7 @@
 }
 .dropdown-submenu.open,
 .dropdown-submenu:hover {
-   > .dropdown-menu { display: block; }
+   > .dropdown-menu { visibility: visible; transition: opacity .9s; opacity: 1; }
 }
 
 // Dropups
